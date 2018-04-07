@@ -45,4 +45,11 @@ describe('Customer', function() {
     customer2.buy(record3);
     assert.strictEqual(customer2.records.length, 1);
   })
+
+  it('can get value of customers records', function() {
+    customer.buy(record);
+    customer.buy(record2);
+    customer.buy(record3);
+    assert.strictEqual(customer.valueOfRecords(), 70);
+  })
 })

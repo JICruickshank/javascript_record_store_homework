@@ -19,6 +19,10 @@ Customer.prototype.sell = function (recordToSell) {
   this.funds += recordToSell.price;
 };
 
+Customer.prototype.valueOfRecords = function () {
+  return _.sumBy(this.records, record => record.price);
+};
+
 
 
 
