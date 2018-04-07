@@ -37,5 +37,10 @@ Store.prototype.statusCheck = function () {
   return `Balance: £${this.balance}, Stock Value: £${this.inventoryValue()}`;
 };
 
+Store.prototype.viewByGenre = function (genre) {
+  let result = _.filter(this.inventory, ['genre', genre]);
+  return result;
+};
+
 
 module.exports = Store;

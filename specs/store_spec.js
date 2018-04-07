@@ -55,6 +55,11 @@ describe('Store', function() {
   it('get status report', function() {
     store.addMultipleRecords(records);
     assert.strictEqual(store.statusCheck(), "Balance: £100, Stock Value: £70");
+  })
 
+  it('can view records by genre', function() {
+    store.addMultipleRecords(records);
+    let result = store.viewByGenre("Old Skool");
+    assert.strictEqual(result.length, 2);
   })
 })
