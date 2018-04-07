@@ -21,6 +21,10 @@ describe("Record", function() {
     assert.strictEqual(record.price, 20);
   })
 
+  it('can print record details', function() {
+    assert.strictEqual(record.printDetails(), "DJ's Take Control, SL2 - £20")
+  })
+
 
 
 

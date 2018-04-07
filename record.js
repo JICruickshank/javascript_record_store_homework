@@ -4,5 +4,10 @@ var Record = function(artist, title, price) {
   this.price = price;
 };
 
+Record.prototype.printDetails = function () {
+  return `${this.title}, ${this.artist} - £${this.price}`;
+
+};
+
 
 module.exports = Record;
