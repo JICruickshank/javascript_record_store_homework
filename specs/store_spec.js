@@ -51,4 +51,10 @@ describe('Store', function() {
     store.addMultipleRecords(records);
     assert.strictEqual(store.inventoryValue(), 70);
   })
+
+  it('get status report', function() {
+    store.addMultipleRecords(records);
+    assert.strictEqual(store.statusCheck(), "Balance: £100, Stock Value: £70");
+
+  })
 })

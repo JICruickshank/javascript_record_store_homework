@@ -31,7 +31,10 @@ Store.prototype.addMultipleRecords = function (records) {
 
 Store.prototype.inventoryValue = function () {
   return _.sumBy(this.inventory, record => record.price);
+};
 
+Store.prototype.statusCheck = function () {
+  return `Balance: £${this.balance}, Stock Value: £${this.inventoryValue()}`;
 };
 
 
