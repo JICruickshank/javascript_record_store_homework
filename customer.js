@@ -19,7 +19,12 @@ Customer.prototype.sell = function (recordToSell) {
   this.funds += recordToSell.price;
 };
 
-Customer.prototype.valueOfRecords = function () {
+Customer.prototype.viewByGenre = function (genre) {
+  return _.filter(this.records, ['genre', genre])
+
+};
+
+Customer.prototype.valueOfRecords = function (genre) {
   return _.sumBy(this.records, record => record.price);
 };
 

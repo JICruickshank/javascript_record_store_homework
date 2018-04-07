@@ -52,4 +52,20 @@ describe('Customer', function() {
     customer.buy(record3);
     assert.strictEqual(customer.valueOfRecords(), 70);
   })
+
+  it('can filter records by genre', function() {
+    customer.buy(record);
+    customer.buy(record2);
+    customer.buy(record3);
+    let result = customer.viewByGenre("Old Skool");
+    assert.strictEqual(result.length, 2);
+  })
+
+  // it('can get value of records of a genre', function() {
+  //   customer.buy(record);
+  //   customer.buy(record2);
+  //   customer.buy(record3);
+  //   assert.strictEqual(customer.valueOfRecords("Old Skool"), 40);
+  //
+  // })
 })
