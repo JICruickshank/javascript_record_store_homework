@@ -37,4 +37,12 @@ describe('Customer', function() {
     assert.strictEqual(customer.records.length, 1);
     assert.strictEqual(customer.funds, 70);
   })
+
+  it('customer has sufficient funds to buy', function() {
+    customer2 = new Customer("Gerwyn", 20);
+    assert.strictEqual(customer2.records.length, 0);
+    customer2.buy(record);
+    customer2.buy(record3);
+    assert.strictEqual(customer2.records.length, 1);
+  })
 })

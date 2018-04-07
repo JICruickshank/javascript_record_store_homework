@@ -7,8 +7,11 @@ var Customer = function(name, funds) {
 }
 
 Customer.prototype.buy = function (record) {
-  this.records.push(record);
-  this.funds -= record.price;
+  if (this.funds >= record.price) {
+    this.records.push(record);
+    this.funds -= record.price;
+    console.log(this.funds);
+  }
 };
 
 Customer.prototype.sell = function (recordToSell) {
