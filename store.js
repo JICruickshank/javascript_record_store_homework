@@ -1,3 +1,5 @@
+const _ = require("lodash");
+
 var Store = function(name, city, balance) {
   this.name = name;
   this.city = city;
@@ -14,6 +16,11 @@ Store.prototype.listInventory = function () {
     record.printDetails();
   }
 
+};
+
+Store.prototype.sellRecord = function (recordToSell) {
+  _.remove(this.inventory, record => record === recordToSell);
+  this.balance += recordToSell.price;
 };
 
 

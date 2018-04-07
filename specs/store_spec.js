@@ -5,7 +5,7 @@ var Record = require("../record.js");
 describe('Store', function() {
   var store, record, record2;
   beforeEach(function() {
-    store = new Store("Vinyl Exchange", "Manchester", 1000);
+    store = new Store("Vinyl Exchange", "Manchester", 100);
     record = new Record("SL2", "DJ's Take Control", 20);
     record2 = new Record("Altern-8", "Evapor-8", 20)
 
@@ -24,7 +24,7 @@ describe('Store', function() {
   })
 
   it('has balance', function() {
-    assert.strictEqual(store.balance, 1000);
+    assert.strictEqual(store.balance, 100);
   })
 
   it('can add records', function() {
@@ -37,5 +37,13 @@ describe('Store', function() {
     store.addRecord(record);
     store.addRecord(record2);
     store.listInventory();
+  })
+
+  it('can sell record', function() {
+    store.addRecord(record);
+    assert.strictEqual(store.inventory.length, 1);
+    store.sellRecord(record);
+    assert.strictEqual(store.inventory.length, 0);
+    assert.strictEqual(store.balance, 120);
   })
 })
