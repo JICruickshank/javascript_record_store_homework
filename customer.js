@@ -24,8 +24,13 @@ Customer.prototype.viewByGenre = function (genre) {
 
 };
 
-Customer.prototype.valueOfRecords = function (genre) {
+Customer.prototype.valueOfRecords = function () {
   return _.sumBy(this.records, record => record.price);
+};
+
+Customer.prototype.valueOfRecordsByGenre = function (genre) {
+  let records = this.viewByGenre(genre); 
+  return _.sumBy(records, record => record.price);
 };
 
 

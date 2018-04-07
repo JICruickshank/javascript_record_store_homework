@@ -61,11 +61,10 @@ describe('Customer', function() {
     assert.strictEqual(result.length, 2);
   })
 
-  // it('can get value of records of a genre', function() {
-  //   customer.buy(record);
-  //   customer.buy(record2);
-  //   customer.buy(record3);
-  //   assert.strictEqual(customer.valueOfRecords("Old Skool"), 40);
-  //
-  // })
+  it('can get value of records of a genre', function() {
+    customer.buy(record);
+    customer.buy(record2);
+    customer.buy(record3);
+    assert.strictEqual(customer.valueOfRecordsByGenre("Old Skool"), 40);
+  })
 })
