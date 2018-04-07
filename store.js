@@ -27,6 +27,10 @@ Store.prototype.addMultipleRecords = function (records) {
   for(record of records) {
     this.addRecord(record);
   }
+};
+
+Store.prototype.inventoryValue = function () {
+  return _.sumBy(this.inventory, record => record.price);
 
 };
 
