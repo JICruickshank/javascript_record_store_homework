@@ -4,5 +4,12 @@ var Customer = function(name, funds) {
   this.records = [];
 }
 
+Customer.prototype.buy = function (record) {
+  this.records.push(record);
+
+};
+
+
+
 
 module.exports = Customer;
