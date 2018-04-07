@@ -1,10 +1,12 @@
 var assert = require("assert");
 var Store = require("../store.js");
+var Record = require("../record.js");
 
 describe('Store', function() {
-  var store;
+  var store, record;
   beforeEach(function() {
     store = new Store("Vinyl Exchange", "Manchester", 1000);
+    record = new Record("SL2", "DJ's Take Control", 20);
 
   });
 
@@ -22,5 +24,11 @@ describe('Store', function() {
 
   it('has balance', function() {
     assert.strictEqual(store.balance, 1000);
+  })
+
+  it('can add records', function() {
+    store.addRecord(record);
+    assert.strictEqual(store.inventory.length, 1);
+    assert.strictEqual(store.inventory[0].artist, "SL2");
   })
 })
