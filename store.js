@@ -9,5 +9,12 @@ Store.prototype.addRecord = function (record) {
   this.inventory.push(record);
 };
 
+Store.prototype.listInventory = function () {
+  for(record of this.inventory) {
+    record.printDetails();
+  }
+
+};
+
 
 module.exports = Store;
