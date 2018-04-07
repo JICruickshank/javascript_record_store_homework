@@ -29,8 +29,13 @@ Customer.prototype.valueOfRecords = function () {
 };
 
 Customer.prototype.valueOfRecordsByGenre = function (genre) {
-  let records = this.viewByGenre(genre); 
+  let records = this.viewByGenre(genre);
   return _.sumBy(records, record => record.price);
+};
+
+Customer.prototype.mostValuable = function () {
+  return _.maxBy(this.records, 'price');
+
 };
 
 

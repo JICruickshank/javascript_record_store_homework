@@ -67,4 +67,11 @@ describe('Customer', function() {
     customer.buy(record3);
     assert.strictEqual(customer.valueOfRecordsByGenre("Old Skool"), 40);
   })
+
+  it('can find most valuable record', function() {
+    customer.buy(record);
+    customer.buy(record2);
+    customer.buy(record3);
+    assert.strictEqual(customer.mostValuable(), record3);
+  })
 })
