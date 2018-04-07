@@ -4,7 +4,7 @@ var Store = require("../store.js");
 describe('Store', function() {
   var store;
   beforeEach(function() {
-    store = new Store("Vinyl Exchange", "Manchester");
+    store = new Store("Vinyl Exchange", "Manchester", 1000);
 
   });
 
@@ -18,5 +18,9 @@ describe('Store', function() {
 
   it('has empty inventory', function() {
     assert.strictEqual(store.inventory.length, 0);
+  })
+
+  it('has balance', function() {
+    assert.strictEqual(store.balance, 1000);
   })
 })
