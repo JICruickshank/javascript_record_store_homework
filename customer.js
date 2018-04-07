@@ -37,8 +37,13 @@ Customer.prototype.mostValuable = function () {
   return _.maxBy(this.records, 'price');
 };
 
-Customer.prototype.sortByValueAscending = function () {
+Customer.prototype.sortByValue = function () {
   return _.orderBy(this.records, ['price', 'artist'], ['desc', 'asc'] )
+};
+
+Customer.prototype.compareValue = function (another) {
+  return this.valueOfRecords() - another.valueOfRecords();
+};
 
 
 
