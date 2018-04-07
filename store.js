@@ -23,5 +23,12 @@ Store.prototype.sellRecord = function (recordToSell) {
   this.balance += recordToSell.price;
 };
 
+Store.prototype.addMultipleRecords = function (records) {
+  for(record of records) {
+    this.addRecord(record);
+  }
+
+};
+
 
 module.exports = Store;
