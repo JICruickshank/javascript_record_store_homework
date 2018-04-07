@@ -15,4 +15,8 @@ describe('Customer', function() {
   it('customer has funds', function() {
     assert.strictEqual(customer.funds, 100);
   })
+
+  it('customer has no records', function() {
+    assert.strictEqual(customer.records.length, 0);
+  })
 })
