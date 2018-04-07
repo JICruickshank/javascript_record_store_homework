@@ -5,7 +5,7 @@ var Record = function(artist, title, price) {
 };
 
 Record.prototype.printDetails = function () {
-  return `${this.title}, ${this.artist} - £${this.price}`;
+  console.log(`${this.title}, ${this.artist} - £${this.price}`);
 
 };
 
