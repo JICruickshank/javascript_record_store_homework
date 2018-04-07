@@ -23,5 +23,19 @@ Store.prototype.sellRecord = function (recordToSell) {
   this.balance += recordToSell.price;
 };
 
+Store.prototype.addMultipleRecords = function (records) {
+  for(record of records) {
+    this.addRecord(record);
+  }
+};
+
+Store.prototype.inventoryValue = function () {
+  return _.sumBy(this.inventory, record => record.price);
+};
+
+Store.prototype.statusCheck = function () {
+  return `Balance: £${this.balance}, Stock Value: £${this.inventoryValue()}`;
+};
+
 
 module.exports = Store;
