@@ -25,18 +25,20 @@ Customer.prototype.viewByGenre = function (genre) {
 };
 
 Customer.prototype.valueOfRecords = function () {
-  return _.sumBy(this.records, record => record.price);
+  return _.sumBy(this.records, 'price');
 };
 
 Customer.prototype.valueOfRecordsByGenre = function (genre) {
   let records = this.viewByGenre(genre);
-  return _.sumBy(records, record => record.price);
+  return _.sumBy(records, 'price');
 };
 
 Customer.prototype.mostValuable = function () {
   return _.maxBy(this.records, 'price');
-
 };
+
+Customer.prototype.sortByValueAscending = function () {
+  return _.orderBy(this.records, ['price', 'artist'], ['desc', 'asc'] )
 
 
 

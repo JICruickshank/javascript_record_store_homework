@@ -74,4 +74,13 @@ describe('Customer', function() {
     customer.buy(record3);
     assert.strictEqual(customer.mostValuable(), record3);
   })
+
+  it('can sort by value', function() {
+    customer.buy(record);
+    customer.buy(record2);
+    customer.buy(record3);
+    assert.deepStrictEqual(customer.sortByValueAscending(), [record3, record2, record]);
+
+
+  })
 })
