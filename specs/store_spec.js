@@ -6,8 +6,8 @@ describe('Store', function() {
   var store, record, record2;
   beforeEach(function() {
     store = new Store("Vinyl Exchange", "Manchester", 100);
-    record = new Record("SL2", "DJ's Take Control", 20);
-    record2 = new Record("Altern-8", "Evapor-8", 20)
+    record = new Record("SL2", "DJ's Take Control", "Old Skool", 20);
+    record2 = new Record("Altern-8", "Evapor-8", "Old Skool", 20)
 
   });
 

@@ -4,7 +4,7 @@ var Record = require("../record.js");
 describe("Record", function() {
   var record;
   beforeEach(function() {
-    record = new Record("SL2", "DJ's Take Control", 20);
+    record = new Record("SL2", "DJ's Take Control", "Old Skool", 20);
   });
 
   it('has artist', function() {
@@ -21,6 +21,10 @@ describe("Record", function() {
 
   it('can print details', function() {
     record.printDetails();
+  })
+
+  it('record has genre', function() {
+    assert.strictEqual(record.genre, "Old Skool");
   })
 
 });
