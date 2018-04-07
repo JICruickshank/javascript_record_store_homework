@@ -3,10 +3,11 @@ var Store = require("../store.js");
 var Record = require("../record.js");
 
 describe('Store', function() {
-  var store, record;
+  var store, record, record2;
   beforeEach(function() {
     store = new Store("Vinyl Exchange", "Manchester", 1000);
     record = new Record("SL2", "DJ's Take Control", 20);
+    record2 = new Record("Altern-8", "Evapor-8", 20)
 
   });
 
@@ -30,5 +31,11 @@ describe('Store', function() {
     store.addRecord(record);
     assert.strictEqual(store.inventory.length, 1);
     assert.strictEqual(store.inventory[0].artist, "SL2");
+  })
+
+  it('can list records', function() {
+    store.addRecord(record);
+    store.addRecord(record2);
+    store.listInventory();
   })
 })
